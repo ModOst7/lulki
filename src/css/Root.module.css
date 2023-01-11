@@ -1,0 +1,7 @@
+.main {
+    height: 970px;
+    background: url('../img/root/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
