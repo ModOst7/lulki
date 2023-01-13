@@ -1,7 +1,135 @@
+
+
 .main {
     height: 970px;
     background: url('../img/root/background.png');
     background-size: contain;
     background-repeat: no-repeat;
     overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.title-one {
+    margin-top: 120px;
+    margin-right: 110px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 101.01%;
+
+    text-align: right;
+
+    color: #FFFFFF;
+}
+
+.title-two {
+    margin-top: 32px;
+    margin-right: 103px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 110px;
+    line-height: 123.51%;
+}
+
+.black {
+    color: #000000;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+.block-name {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 13px;
+    margin-right: 79px;
+}
+
+.first-name,
+.last-name {
+    border: none;
+    width: 455px;
+    height: 63px;
+    border-radius: 30px 0px 0px 30px;
+    padding-left: 30px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 101.01%;
+
+    color: #000000;
+}
+
+.first-name:focus,
+.last-name:focus {
+    /*outline: none;*/
+}
+
+.form-registration {
+    margin-top: 252px;
+}
+
+.label-name {
+    display: flex;
+    align-self: center;
+    margin-right: 50px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 101.01%;
+    /* or 27px */
+
+    text-align: right;
+
+    color: #000000;
+}
+
+.accept-button {
+    width: 332px;
+    height: 63px;
+    background: #FFFFFF;
+    border-radius: 40px 0px 0px 40px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 101.01%;
+    /* or 20px */
+    
+    text-align: center;
+    
+    color: #4B81AD;
+}
+
+.accept-button:hover {
+    background: #F28300;
+    color: #FFFFFF;
+}
+
+.accept-button-text {
+    margin-left: 55px;
 }

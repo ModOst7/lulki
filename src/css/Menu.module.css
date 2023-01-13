@@ -1,0 +1,173 @@
+
+
+.main {
+    height: 970px;
+    background: url('../img/menu/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.container a {
+    text-decoration: none;
+    color:#000000;
+}
+
+.title-text {
+    margin: 50px 100px 0px 0px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 110px;
+    line-height: 123.51%;
+
+    color: #000000;
+}
+
+.black {
+    color: #000000;
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+.practice-block {
+    display: flex;
+    align-self: start;
+}
+
+.labs {
+    width: 511px;
+    height: 689px;
+    margin: 43px 0px 0px 97px;
+
+    background: #4A81AC;
+    border-radius: 40px;
+}
+
+.labs-title {
+    margin: 34px 0px 0px 30px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 106.01%;
+
+    color: #FFFFFF;
+}
+
+.corner {
+    width: 28px;
+    height: 28px;
+    background: url('../img/menu/corner.png');
+    background-repeat: no-repeat;
+    margin: 45px 0px -15px -21px;
+}
+
+.labs-container {
+    width: 455px;
+    height: 440px;
+    margin: 0px 0px 0px -20px;
+    padding: 20px 0px 0px 47px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 50px 50px 0px;
+}
+
+.lab {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 123.51%;
+}
+
+.lab-one,
+.lab-two,
+.lab-three,
+.lab-four {
+    width: 481px;
+    height: 68px;
+    display: flex;
+    padding-left: 50px;
+    margin: 10px 0px 0px -48px;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.lab-two, .lab-three {
+    height: 105px;
+}
+
+.lab-one:hover,
+.lab-two:hover,
+.lab-three:hover,
+.lab-four:hover {
+    color: #FFFFFF;
+    background: #4A81AC;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task-and-test {}
+
+.tasks, .test {
+    width: 511px;
+    height: 335px;
+    margin: 43px 0px 0px 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.2s;
+
+    background: #4A81AC;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.test {
+    margin-top: 19px;
+}
+
+.tasks:hover, .test:hover {
+    color: #FFFFFF;
+    background: #F28300;
+}
+
+.tasks-icon {}
+
+.tasks-text,
+.test-text {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 106.01%;
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.title-two {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 101.01%;
+    color: #FFFFFF;
+    margin: 40px 0px 0px 215px;
+}

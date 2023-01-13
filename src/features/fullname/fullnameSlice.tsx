@@ -32,6 +32,6 @@ export const fullnameSlice = createSlice({
 export const { changeFirstName, changeLastName } =
   fullnameSlice.actions;
 
-export const selectFullname = (state:RootState) => {console.log(state); return state.fullname.value;}
+export const selectFullname = (state:RootState) => state.fullname.value;
 
 export default fullnameSlice.reducer;

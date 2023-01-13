@@ -1,0 +1,106 @@
+.main {
+    height: 970px;
+    background: url('../img/labOne/background.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position-x: 81.7%;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.text {
+    width: 1171px;
+    height: 402px;
+    margin: 260px 0px 0px 80px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 123.51%;
+}
+
+.navigation {
+    display: flex;
+    margin: 130px 0px 0px 95px;
+}
+
+.back,
+.next {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 182px;
+    height: 64px;
+    margin: 0px 25px 0px 0px;
+    transition: 0.2s;;
+    cursor:pointer;
+
+    background: #4A81AC;
+    border-radius: 30px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 101.01%;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.back:hover, .next:hover {
+    background: #F28300;
+}
+
+.back-text,
+.next-text {
+    align-self: center;
+}
+
+.title-block {
+    align-self: flex-start;
+    margin: 60px 0px 0px 105px;
+}
+
+.title-one {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 123.51%;
+
+    color: #FFFFFF;
+}
+
+.title-two {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 123.51%;
+    margin-top: 50px;
+
+    color: #FFFFFF;
+}
+
+.title-three {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 123.51%;
+    margin-top: 415px;
+
+    color: #FFFFFF;
+}
+
+.title-three-2 {
+    font-size: 30px;
+}
