@@ -5,8 +5,6 @@ import { createBrowserRouter, RouterProvider, Route, HashRouter, Routes } from "
 import Root from "./routes/root";
 import Menu from "./routes/menu"
 import LabOne from './routes/labOne/labOne';
-import LabOne1 from './routes/labOne/labOne1';
-import LabOne2 from './routes/labOne/labOne2';
 
 const router = createBrowserRouter([
   {
@@ -25,7 +23,7 @@ function App() {
     }
   }, [])
   return (
-    <div style={{ "transform": `scale(${scale})`, width: 1920, height: 970, transformOrigin: "top left" }}>
+    <div style={{ "transform": `scale(${scale})`, width: 1920, height: 969, transformOrigin: "top left" }}>
       <React.StrictMode>
         <HashRouter
           basename="/"
@@ -34,8 +32,6 @@ function App() {
             <Route path="/" element={<Root />} />
             <Route path="menu" element={<Menu />} />
             <Route path="labOne" element={<LabOne />} >
-              <Route path="/labOne/1" element={<LabOne1 />} />
-              <Route path="/labOne/2" element={<LabOne2 />} />
             </Route>
           </Routes>
         </HashRouter>
@@ -49,9 +45,9 @@ const scalable = (setScale: React.Dispatch<React.SetStateAction<number>>) => {
   const height = window.innerHeight;
 
   const scaleWidth = width / 1920
-  const scaleHeight = height / 970
+  const scaleHeight = height / 969
 
-  console.log(scaleWidth, scaleHeight)
+  console.log(width, height)
 
   if (scaleWidth > scaleHeight) {
     setScale(scaleHeight)

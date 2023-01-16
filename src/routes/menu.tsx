@@ -19,7 +19,7 @@ export default function Menu() {
                             <div className={styles['labs-title']}>Лабораторные <br />работы</div>
                             <div className={styles['corner']}></div>
                             <div className={styles['labs-container']}>
-                                <Link to={`/labOne/1`}>
+                                <Link to={`/labOne/`}>
                                     <div className={`${styles['lab']} ${styles['lab-one']}`}>Сигнализация</div>
                                 </Link>
                                 <div className={`${styles['lab']} ${styles['lab-two']}`}>Подготовка к выполнению <br />работ в люльке</div>
