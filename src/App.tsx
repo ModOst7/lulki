@@ -23,8 +23,8 @@ function App() {
     }
   }, [])
   return (
-    <div style={{ "transform": `scale(${scale})`, width: 1920, height: 969, transformOrigin: "top left" }}>
-      <React.StrictMode>
+    <div >
+      
         <HashRouter
           basename="/"
         >
@@ -35,7 +35,6 @@ function App() {
             </Route>
           </Routes>
         </HashRouter>
-      </React.StrictMode>
     </div>
   );
 }

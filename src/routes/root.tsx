@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../css/Root.module.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
     changeFirstName,
@@ -13,10 +13,18 @@ export default function Root() {
     const fullname = useSelector(selectFullname);
     const dispatch = useDispatch();
 
+    const [scale, setScale] = useState(1)
+  useEffect(() => {
+    scalable(setScale)
+    window.onresize = () => {
+      scalable(setScale)
+    }
+  })
+
     return (
         <>
 
-            <div className={styles['main']}>
+            <div style={{ "transform": `scale(${scale})`, width: 1920, height: 969, transformOrigin: "top left" }} className={styles['main']}>
                 <div className={styles['container']}>
                     <div className={styles['title-one']}>Электронный <br /> практикум</div>
                     <div className={styles['title-two']}><span className={styles['black']}>РАБОЧИЙ</span> <span className={styles['white']}>ЛЮЛЬКИ</span></div>
@@ -54,3 +62,21 @@ export default function Root() {
         </>
     );
 }
+
+const scalable = (setScale: React.Dispatch<React.SetStateAction<number>>) => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+  
+    const scaleWidth = width / 1920
+    const scaleHeight = height / 969
+  
+    console.log(width, height)
+  
+    if (scaleWidth > scaleHeight) {
+      setScale(scaleHeight)
+    } else {
+      setScale(scaleWidth)
+    }
+  
+  
+  }
