@@ -161,7 +161,8 @@
     width: 805px;
 }
 
-.section-description-one, .section-description-two {
+.section-description-one,
+.section-description-two {
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 400;
@@ -182,11 +183,21 @@
     margin: 50px 0px 0px 80px;
 }
 
-.words-step-one {
+.words-step-one,
+.words-step-two,
+.words-step-three,
+.words-step-four {
     margin-left: 125px;
     display: flex;
     align-items: flex-start;
     height: fit-content;
+}
+
+.words-step-one-container,
+.words-step-two-container,
+.words-step-three-container,
+.words-step-four-container {
+    flex-direction: column;
 }
 
 .word-container {
@@ -250,13 +261,15 @@
 
 .container-drop {
     display: flex;
+    justify-content: center;
     margin: 30px 0px 0px 180px;
     height: 400px;
 }
 
 .dropzone {
-    margin-right: 185px;
-    width: 213px;
+    margin-right: 80px;
+    width: 335px;
+    position: relative;
 }
 
 .dropzone img {
@@ -314,4 +327,169 @@
     height: 100%;
     padding-top: 50%;
     box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.words-step-one-container,
+.container-step-one,
+.navigation-step-one,
+.words-step-two-container,
+.container-step-two,
+.navigation-step-two,
+.words-step-three-container,
+.container-step-three,
+.navigation-step-three,
+.words-step-four-container,
+.container-step-four,
+.navigation-step-four {
+    transition: 1s;
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+
+.words-step-one-container.vis,
+.container-step-one.vis,
+.navigation-step-one.vis,
+.words-step-two-container.vis,
+.container-step-two.vis,
+.navigation-step-two.vis,
+.words-step-three-container.vis,
+.container-step-three.vis,
+.navigation-step-three.vis,
+.words-step-four-container.vis,
+.container-step-four.vis,
+.navigation-step-four.vis {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+}
+
+.main-final {
+    display: flex;
+    height: 970px;
+    background: url('../img/labOne/background-final.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-position-x: 0.7%;
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+
+.main-final.vis {
+    visibility: visible;
+    display: flex;
+    /*opacity: 1;*/
+    animation: appear 1s ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.final-title {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 123.51%;
+    margin: 327px 0px 0px 108px;
+}
+
+.menu-button {
+    margin: 430px 0 0 125px;
+}
+
+.left-side {}
+
+.center {
+    width: 840px;
+    height: 840px;
+    padding: 45px 60px 0 60px;
+    margin-top: 35px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+}
+
+.right-side {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 53px 145px;
+}
+
+.print-icon {
+    margin-left: 45px;
+}
+
+.header {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 123.51%;
+    margin-bottom: 35px;
+}
+
+.header-one,
+.header-two {
+    display: flex;
+    justify-content: space-between;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.report-header-right-answer,
+.report-header-user-answer {
+    background: #4A81AC;
+    color: #FFFFFF;
+    flex: 1;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.report-header-right-answer {
+    margin-right: 4px;
+}
+
+.part-title {
+    background: #F4F4F4;
+    text-align: center;
+    padding: 10px 0px;
+    margin: 4px 0px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 123.51%;
+}
+
+.answers-container {
+    display: flex;
+    margin-bottom: 4px;
+}
+
+.report-right-answers, .report-user-answers {
+    flex: 1;
+    background: #F4F4F4;
+    padding: 10px 16px 10px 16px;
+}
+
+.report-right-answers {
+    margin-right: 4px;
 }

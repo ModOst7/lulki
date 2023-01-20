@@ -32,15 +32,82 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.icon-1-1, .icon-1-2 {
+.icon-1-1,
+.icon-1-2,
+.icon-2-1,
+.icon-2-2,
+.icon-2-3,
+.icon-3-1,
+.icon-3-2,
+.icon-4-1,
+.icon-4-2,
+.icon-4-3,
+.icon-5-1,
+.icon-5-2,
+.icon-6-1,
+.icon-6-2,
+.icon-6-3,
+.icon-7-1,
+.icon-7-2,
+.icon-7-3,
+.icon-8-1,
+.icon-8-2,
+.icon-9-1,
+.icon-9-2,
+.icon-9-3,
+.icon-10-1,
+.icon-10-2,
+.icon-10-3 {
   transition: 1s;
 }
 
-#icon-1-2 {
+#icon-1-2,
+#icon-2-2,
+#icon-2-3,
+#icon-3-2,
+#icon-4-2,
+#icon-4-3,
+#icon-5-2,
+#icon-6-2,
+#icon-6-3,
+#icon-7-2,
+#icon-7-3,
+#icon-8-2,
+#icon-9-2,
+#icon-9-3,
+#icon-10-2,
+#icon-10-3 {
   opacity: 0;
+}
+
+#icon-6-3 {
+  width: 100px;
+  position: absolute;
+  left: 65px;
+  top: -35px;
+  animation: r 2s linear infinite;
+} 
+
+#icon-10-3 {
+  width: 100px;
+  position: absolute;
+  left: 65px;
+  top: -35px;
+  animation: r 2s linear infinite;
+} 
+
+@keyframes r {
+  to {
+    transform: rotate3d(0, 0, 1, -360deg);
+  }
+}
+
+#icon-6-3-container {
+  transform: rotateX(35deg) skew(334deg, 4deg);
 }
