@@ -132,7 +132,7 @@
 .title-steps {
     background: #4A81AC;
     border-radius: 0px;
-    height: 154px;
+    height: 8vw;
 }
 
 .title-one-steps,
@@ -140,7 +140,7 @@
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 1.6vw;
     line-height: 123.51%;
 
     text-align: center;
@@ -149,16 +149,16 @@
 }
 
 .title-one-steps {
-    padding-top: 26px;
+    padding-top: 1.4vw;
 }
 
 .title-two-steps {
-    font-size: 42px;
-    margin-top: 6px;
+    font-size: 2.2vw;
+    margin-top: 0.3vw;
 }
 
 .section-description {
-    width: 805px;
+    width: 42vw;
 }
 
 .section-description-one,
@@ -166,28 +166,28 @@
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 400;
-    font-size: 25px;
+    font-size: 1.3vw;
     line-height: 123.51%;
 
     color: #000000;
 }
 
 .section-description-two {
-    margin-top: 25px;
-    font-size: 20px;
+    margin-top: 1.3vw;
+    font-size: 1.1vw;
     font-style: italic;
 }
 
 .section-one {
     display: flex;
-    margin: 50px 0px 0px 80px;
+    margin: 2.5vw 0px 0px 4vw;
 }
 
 .words-step-one,
 .words-step-two,
 .words-step-three,
 .words-step-four {
-    margin-left: 125px;
+    margin-left: 6.5vw;
     display: flex;
     align-items: flex-start;
     height: fit-content;
@@ -210,7 +210,7 @@
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 101.01%;
     /* or 20px */
 
@@ -350,6 +350,10 @@
     visibility: hidden;
     display: none;
     opacity: 0;
+}
+
+.words-step-one-container, .words-step-two-container, .words-step-three-container {
+    width: 41%;
 }
 
 .words-step-one-container.vis,
