@@ -1,0 +1,12 @@
+#center {
+    margin-left: -400px;
+}
+
+#report-header-right-answer, #report-header-user-answer {
+    background: #fff;
+    color: #000;
+}
+
+#download-button, #print-button {
+    visibility: hidden;
+}

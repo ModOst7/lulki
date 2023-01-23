@@ -206,7 +206,7 @@
     align-items: center;
     justify-content: space-around;
     background: #F4F4F4;
-    border-radius: 30px;
+    border-radius: 1.6vw;
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 400;
@@ -262,19 +262,21 @@
 .container-drop {
     display: flex;
     justify-content: center;
-    margin: 30px 0px 0px 180px;
-    height: 400px;
+    margin: 1.6vw 0px 0px 9vw;
+    height: 20vw;
 }
 
 .dropzone {
-    margin-right: 80px;
-    width: 335px;
+    margin-right: 4vw;
+    width: 17vw;
     position: relative;
+    
 }
 
 .dropzone img {
     position: absolute;
-    width: 331px;
+    width: 17vw;
+    
 }
 
 
@@ -283,7 +285,7 @@
 .navigation-workplace {
     display: flex;
     justify-content: center;
-    margin: 30px 0px 0px 0px;
+    margin: 1.6vw 0px 0px 0px;
 }
 
 
@@ -292,19 +294,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 182px;
-    height: 64px;
-    margin: 0px 25px 0px 0px;
+    width: 9.5vw;
+    height: 3.5vw;
+    margin: 0px 1.4vw 0px 0px;
     transition: 0.2s;
     cursor: pointer;
 
     background: #4A81AC;
-    border-radius: 30px;
+    border-radius: 1.6vw;
 
     font-family: 'Segoe UI';
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 1vw;
     line-height: 101.01%;
 
     text-align: center;
@@ -325,14 +327,15 @@
 .drop-section {
     width: 100%;
     height: 100%;
-    padding-top: 50%;
+    padding: 8vw 5vw 0 3vw;
     box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
+
 
 .words-step-one-container,
 .container-step-one,
@@ -352,13 +355,18 @@
     opacity: 0;
 }
 
-.words-step-one-container, .words-step-two-container, .words-step-three-container {
+.words-step-one-container, .words-step-two-container, .words-step-three-container, .words-step-four-container {
     width: 41%;
 }
 
 .words-step-one-container.vis,
 .container-step-one.vis,
-.navigation-step-one.vis,
+.navigation-step-one.vis {
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+}
+
 .words-step-two-container.vis,
 .container-step-two.vis,
 .navigation-step-two.vis,
@@ -371,6 +379,7 @@
     visibility: visible;
     opacity: 1;
     display: flex;
+    animation: appear 1s ease;
 }
 
 .main-final {
@@ -496,4 +505,8 @@
 
 .report-right-answers {
     margin-right: 4px;
+}
+
+.menu-button a {
+    text-decoration: none;
 }

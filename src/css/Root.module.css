@@ -132,4 +132,22 @@
 
 .accept-button-text {
     margin-left: 55px;
+
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 101.01%;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color:inherit;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

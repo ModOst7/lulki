@@ -24,12 +24,6 @@ export default function Root() {
     const checkFullname = (e: any) => {
         if (!fullname.firstName || !fullname.lastName) {
             e.preventDefault();
-            if (!fullname.firstName) {
-                (document.getElementById('first-name') as HTMLInputElement).reportValidity();
-            }
-            if (!fullname.lastName) {
-                (document.getElementById('last-name') as HTMLInputElement).reportValidity();
-            }
         }
     }
 
@@ -45,7 +39,6 @@ export default function Root() {
                             <div className={styles["block-name"]}>
                                 <div className={styles["label-name"]}>ФАМИЛИЯ</div>
                                 <input
-                                    id="last-name"
                                     type="text"
                                     required
                                     name="lastName"
@@ -60,7 +53,6 @@ export default function Root() {
                             <div className={styles["block-name"]}>
                                 <div className={styles["label-name"]}>ИМЯ</div>
                                 <input
-                                    id="first-name"
                                     type="text"
                                     className={styles["first-name"]}
                                     required
@@ -75,7 +67,7 @@ export default function Root() {
                         </div>
                         <Link to={`/menu/`} onClick={checkFullname}>
                             <div className={styles["accept-button"]}>
-                                <button type="submit" className={styles["accept-button-text"]} >ПОДТВЕРДИТЬ {'>'}</button>
+                                <div className={styles["accept-button-text"]} >ПОДТВЕРДИТЬ {'>'}</div>
                             </div>
                         </Link>
                     </form>

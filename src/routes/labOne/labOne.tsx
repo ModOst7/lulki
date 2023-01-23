@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../../css/LabOne.module.css";
 
+import {Preview, print} from 'react-html2pdf';
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectFullname } from "../../features/fullname/fullnameSlice";
@@ -21,6 +22,7 @@ export default function LabOne() {
     const fullname = useSelector(selectFullname);
     const [scale, setScale] = useState(1)
 
+    const [totalScore, setTotalScore] = useState(0);
     const [entrance, setEntrance] = useState(true);
     const [lab, setLab] = useState(false);
     const [final, setFinal] = useState(false);
@@ -456,7 +458,14 @@ export default function LabOne() {
     }
 
     const anim11 = () => {
-
+        let icon2 = document.getElementById("icon-11-2");
+        let icon3 = document.getElementById("icon-11-3");
+        if (icon2!.style.opacity == "1" || icon3!.style.opacity == "1") return;
+        icon2!.style.opacity = "1";
+        setTimeout(() => { icon3!.style.opacity = "1"; }, 1200);
+        setTimeout(() => { icon3!.style.opacity = "0"; }, 2000);
+        setTimeout(() => { icon2!.style.opacity = "0"; }, 3000);
+        //setTimeout(() => { icon2!.style.opacity = "0"; }, 1000);
     }
 
     const backToStepTwo = () => {
@@ -470,15 +479,30 @@ export default function LabOne() {
     }
 
     const anim12 = () => {
-
+        let icon2 = document.getElementById("icon-12-2");
+        if (icon2) {
+            icon2.style.opacity = "1";
+            setTimeout(() => { icon2!.style.opacity = "0"; }, time1);
+        }
     }
 
     const anim13 = () => {
-
+        let icon2 = document.getElementById("icon-13-2");
+        let icon3 = document.getElementById("icon-13-3");
+        if (icon2!.style.opacity == "1" || icon3!.style.opacity == "1") return;
+        icon2!.style.opacity = "1";
+        setTimeout(() => { icon3!.style.opacity = "1"; }, 1000);
+        setTimeout(() => { icon3!.style.opacity = "0"; }, 1400);
+        setTimeout(() => { icon2!.style.opacity = "0"; }, 2400);
+        //setTimeout(() => { icon2!.style.opacity = "0"; }, 1000);
     }
 
     const anim14 = () => {
-
+        let icon2 = document.getElementById("icon-14-2");
+        if (icon2) {
+            icon2.style.opacity = "1";
+            setTimeout(() => { icon2!.style.opacity = "0"; }, time1);
+        }
     }
 
     const backToStepThree = () => {
@@ -489,6 +513,24 @@ export default function LabOne() {
     const toFinal = () => {
         setLab(false);
         setFinal(true);
+        let total = 0;
+        if ((partOne.partOneBasketOne[0].content == "Готовность подавать команду") && (partOne.partOneBasketTwo[0].content == "Поднять колено (стрелу)") && (partOne.partOneBasketThree[0].content == "Выдвинуть стрелу") && (partOne.partOneBasketFour[0].content == "Остановка")) {
+            total += 1;
+        }
+        if ((partTwo.partTwoBasketOne[0].content == "Готовность подавать команду") && (partTwo.partTwoBasketTwo[0].content == "Подъем") && (partTwo.partTwoBasketThree[0].content == "Замедление")) {
+            total += 1;
+        }
+        if ((partThree.partThreeBasketOne[0].content == "Готовность подавать команду") && (partThree.partThreeBasketTwo[0].content == "Указание направления") && (partThree.partThreeBasketThree[0].content == "Опускание") && (partThree.partThreeBasketFour[0].content == "Остановка")) {
+            total += 1;
+        }
+        if ((partFour.partFourBasketOne[0].content == "Готовность подавать команду") && (partFour.partFourBasketTwo[0].content == "Опустить колено (стрелу)") && (partFour.partFourBasketThree[0].content == "Втянуть стрелу")) {
+            total += 1;
+        }
+        setTotalScore(total);
+    }
+
+    const toPrint = () => {
+        window.print();
     }
 
     const onDragEnd = (result: any) => {
@@ -586,8 +628,8 @@ export default function LabOne() {
         // some basic styles to make the items look a bit nicer
         ...draggableStyle,
         userSelect: "none",
-        padding: 5 * 2,
-        margin: `0 0 ${5}px 0`,
+        padding: "1.1vw",
+        margin: `0 0.5vw 0.3vw 0`,
         // change background colour if dragging
         background: isDragging ? "#F28300" : "#F4F4F4",
 
@@ -596,7 +638,6 @@ export default function LabOne() {
     });
     const getListStyle = (isDraggingOver: any) => ({
         background: isDraggingOver ? "" : "",
-        padding: 5,
     });
     console.log(partOne.partOneBasketOne.length)
     return (
@@ -1483,9 +1524,9 @@ export default function LabOne() {
                                     <div
                                         className={styles['dropzone']}
                                         onClick={anim11}>
-                                        <img className={"icon-4-1"} id={"icon-4-1"} src="./img/labOne/lab1_1_1_f.png" />
-                                        <img className={"icon-4-2"} id={"icon-4-2"} src="./img/labOne/lab1_4_1.png" />
-                                        <img className={"icon-4-3"} id={"icon-4-3"} src="./img/labOne/lab1_4_2.png" />
+                                        <img className={"icon-11-1"} id={"icon-11-1"} src="./img/labOne/lab1_1_1_f.png" />
+                                        <img className={"icon-11-2"} id={"icon-11-2"} src="./img/labOne/lab1_4_1.png" />
+                                        <img className={"icon-11-3"} id={"icon-11-3"} src="./img/labOne/lab1_4_2.png" />
                                         <Droppable isDropDisabled={partThree.partThreeBasketFour.length > 0 ? true : false} key={"partThreeBasketFour"} droppableId={"partThreeBasketFour"} direction="vertical">
                                             {(provided, snapshot) => (
                                                 <div
@@ -1526,8 +1567,8 @@ export default function LabOne() {
                                     <div
                                         className={styles['dropzone']}
                                         onClick={anim12}>
-                                        <img className={"icon-5-1"} id={"icon-5-1"} src="./img/labOne/lab1_1_1_f.png" />
-                                        <img className={"icon-5-2"} id={"icon-5-2"} src="./img/labOne/lab1_1_2_f.png" />
+                                        <img className={"icon-12-1"} id={"icon-12-1"} src="./img/labOne/lab1_1_1_f.png" />
+                                        <img className={"icon-12-2"} id={"icon-12-2"} src="./img/labOne/lab1_1_2_f.png" />
                                         <Droppable isDropDisabled={partFour.partFourBasketOne.length > 0 ? true : false} key={"partFourBasketOne"} droppableId={"partFourBasketOne"} direction="vertical">
                                             {(provided, snapshot) => (
                                                 <div
@@ -1567,9 +1608,9 @@ export default function LabOne() {
                                     <div
                                         className={styles['dropzone']}
                                         onClick={anim13}>
-                                        <img className={"icon-6-1"} id={"icon-6-1"} src="./img/labOne/lab1_1_1_f.png" />
-                                        <img className={"icon-6-2"} id={"icon-6-2"} src="./img/labOne/lab1_1_2_f.png" />
-                                        <img className={"icon-6-3"} id={"icon-6-3"} src="./img/labOne/arrow.png" />
+                                        <img className={"icon-13-1"} id={"icon-13-1"} src="./img/labOne/lab1_1_1_f.png" />
+                                        <img className={"icon-13-2"} id={"icon-13-2"} src="./img/labOne/lab4_1_1.png" />
+                                        <img className={"icon-13-3"} id={"icon-13-3"} src="./img/labOne/lab4_1_2.png" />
                                         <Droppable isDropDisabled={partFour.partFourBasketTwo.length > 0 ? true : false} key={"partFourBasketTwo"} droppableId={"partFourBasketTwo"} direction="vertical">
                                             {(provided, snapshot) => (
                                                 <div
@@ -1606,8 +1647,8 @@ export default function LabOne() {
                                     </div>
                                     <div className={styles['dropzone']}
                                         onClick={anim14}>
-                                        <img className={"icon-3-1"} id={"icon-3-1"} src="./img/labOne/lab1_3_1.png" />
-                                        <img className={"icon-3-2"} id={"icon-3-2"} src="./img/labOne/lab1_3_2.png" />
+                                        <img className={"icon-14-1"} id={"icon-14-1"} src="./img/labOne/lab4_2_1.png" />
+                                        <img className={"icon-14-2"} id={"icon-14-2"} src="./img/labOne/lab4_2_2.png" />
                                         <Droppable isDropDisabled={partFour.partFourBasketThree.length > 0 ? true : false} key={"partFourBasketThree"} droppableId={"partFourBasketThree"} direction="vertical">
                                             {(provided, snapshot) => (
                                                 <div
@@ -1675,7 +1716,7 @@ export default function LabOne() {
                                         <div className={styles['back-text']}>{'<'} НАЗАД</div>
                                     </div>
                                     <div onClick={toFinal} className={styles['next-workplace']}>
-                                        <div className={styles['next-text']}>ДАЛЕЕ {'>'}</div>
+                                        <div className={styles['next-text']}>ОТЧЕТ {'>'}</div>
                                     </div>
                                 </div>
                             </div>
@@ -1688,12 +1729,15 @@ export default function LabOne() {
                 <div className={styles['left-side']}>
                     <div className={styles['final-title']}>Поздравляем, <br />Вы выполнили лабораторную <br />работу!</div>
                     <div className={styles['menu-button']}>
-                        <div onClick={() => { console.log('click') }} className={styles['back-workplace']}>
-                            <div className={styles['back-text']}>{'<'} НАЗАД</div>
-                        </div>
+                        <Link to={`/menu/`}>
+                            <div className={styles['back-workplace']}>
+                                <div className={styles['back-text']}>{'<'} НАЗАД</div>
+                            </div>
+                        </Link>
                     </div>
                 </div>
-                <div className={styles['center']}>
+                <Preview id={'pdf'} className={'pdf'}>
+                <div id="center" className={styles['center']}>
                     <div className={styles['center-container']}>
                         <div className={styles['header']}>
                             <div className={styles['header-one']}>
@@ -1702,7 +1746,7 @@ export default function LabOne() {
                             </div>
                             <div className={styles['header-two']}>
                                 <div>Лабораторная работа «Сигнализация». Отчет</div>
-                                <div>{4} из 4</div>
+                                <div>{totalScore} из 4</div>
                             </div>
                             <div className={styles['header-three']}>
                                 Ф.И.О.: {fullname.lastName} {fullname.firstName}
@@ -1713,8 +1757,8 @@ export default function LabOne() {
                         </div>
                         <div className={styles['report']}>
                             <div className={styles['report-header']}>
-                                <div className={styles['report-header-right-answer']}>Верный ответ</div>
-                                <div className={styles['report-header-user-answer']}>Ответ пользователя</div>
+                                <div id="report-header-right-answer" className={styles['report-header-right-answer']}>Верный ответ</div>
+                                <div id="report-header-user-answer" className={styles['report-header-user-answer']}>Ответ пользователя</div>
                             </div>
                             <div className={styles['part-title']}>Первая серия сигналов</div>
                             <div className={styles['answers-container']}>
@@ -1775,9 +1819,10 @@ export default function LabOne() {
                         </div>
                     </div>
                 </div>
+                </Preview>
                 <div className={styles['right-side']}>
-                    <div><img className={styles["download-icon"]} src="./img/labOne/download-icon.png" /></div>
-                    <div><img className={styles["print-icon"]} src="./img/labOne/print-icon.png" /></div>
+                    <div onClick={() => print("a", "pdf")} id="download-button" className={styles['download-button']}><img className={styles["download-icon"]} src="./img/labOne/download-icon.png" /></div>
+                    <div onClick={toPrint} id="print-button" className={styles['print-button']}><img className={styles["print-icon"]} src="./img/labOne/print-icon.png" /></div>
                 </div>
             </div>
 
