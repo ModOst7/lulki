@@ -1,5 +1,7 @@
 #center {
     margin-left: -400px;
+    width: 650px;
+    box-shadow: none;
 }
 
 #report-header-right-answer, #report-header-user-answer {
