@@ -1,7 +1,23 @@
-#center {
+#center, #center2 {
     margin-left: -400px;
     width: 650px;
     box-shadow: none;
+}
+
+#center2 {
+    height: 1240px;
+    margin-left: -537px;
+    margin-top: 0px;
+    width: 807px;
+}
+
+#center2 span {
+    font-size: 13px;
+}
+
+#header2 {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 #report-header-right-answer, #report-header-user-answer {

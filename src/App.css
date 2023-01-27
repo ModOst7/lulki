@@ -4,11 +4,48 @@
 
 div:has(#pdf) {
   z-index: -1;
+  overflow: auto;
+  height: 605px;
 }
 
-#pdf #center {
+#pdf #center, #pdf #center2 {
   width: 700px;
   cursor: default;
+  box-shadow: none;
+}
+
+#pdf-lab2 #center2 {
+  overflow-y: unset;
+}
+
+#pdf-lab2 #center, #pdf-lab2 #center2 {
+  width: 700px;
+  cursor: default;
+  box-shadow: none;
+}
+
+div:has(#pdf-lab2) {
+  z-index: -1;
+  overflow: auto;
+  height: 605px;
+}
+
+#pdf-lab2 {
+  height: 1200px;
+}
+
+#pdf-lab2 span {
+  font-size: 13px;
+}
+
+.blink {
+  animation: blinker 1s linear;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 .App-logo {

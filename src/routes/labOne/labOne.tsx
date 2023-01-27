@@ -514,16 +514,16 @@ export default function LabOne() {
         setLab(false);
         setFinal(true);
         let total = 0;
-        if ((partOne.partOneBasketOne[0].content == "Готовность подавать команду") && (partOne.partOneBasketTwo[0].content == "Поднять колено (стрелу)") && (partOne.partOneBasketThree[0].content == "Выдвинуть стрелу") && (partOne.partOneBasketFour[0].content == "Остановка")) {
+        if ((partOne.partOneBasketOne[0] && (partOne.partOneBasketOne[0].content == "Готовность подавать команду")) && (partOne.partOneBasketTwo[0] && (partOne.partOneBasketTwo[0].content == "Поднять колено (стрелу)")) && (partOne.partOneBasketThree[0] && (partOne.partOneBasketThree[0].content == "Выдвинуть стрелу")) && (partOne.partOneBasketFour[0] && (partOne.partOneBasketFour[0].content == "Остановка"))) {
             total += 1;
         }
-        if ((partTwo.partTwoBasketOne[0].content == "Готовность подавать команду") && (partTwo.partTwoBasketTwo[0].content == "Подъем") && (partTwo.partTwoBasketThree[0].content == "Замедление")) {
+        if ((partTwo.partTwoBasketOne[0] && (partTwo.partTwoBasketOne[0].content == "Готовность подавать команду")) && (partTwo.partTwoBasketTwo[0] && (partTwo.partTwoBasketTwo[0].content == "Подъем")) && (partTwo.partTwoBasketThree[0] && (partTwo.partTwoBasketThree[0].content == "Замедление"))) {
             total += 1;
         }
-        if ((partThree.partThreeBasketOne[0].content == "Готовность подавать команду") && (partThree.partThreeBasketTwo[0].content == "Указание направления") && (partThree.partThreeBasketThree[0].content == "Опускание") && (partThree.partThreeBasketFour[0].content == "Остановка")) {
+        if ((partThree.partThreeBasketOne[0] && (partThree.partThreeBasketOne[0].content == "Готовность подавать команду")) && (partThree.partThreeBasketTwo[0] && (partThree.partThreeBasketTwo[0].content == "Указание направления")) && (partThree.partThreeBasketThree[0] && (partThree.partThreeBasketThree[0].content == "Опускание")) && (partThree.partThreeBasketFour[0] && (partThree.partThreeBasketFour[0].content == "Остановка"))) {
             total += 1;
         }
-        if ((partFour.partFourBasketOne[0].content == "Готовность подавать команду") && (partFour.partFourBasketTwo[0].content == "Опустить колено (стрелу)") && (partFour.partFourBasketThree[0].content == "Втянуть стрелу")) {
+        if ((partFour.partFourBasketOne[0] && (partFour.partFourBasketOne[0].content == "Готовность подавать команду")) && (partFour.partFourBasketTwo[0] && (partFour.partFourBasketTwo[0].content == "Опустить колено (стрелу)")) && (partFour.partFourBasketThree[0] && (partFour.partFourBasketThree[0].content == "Втянуть стрелу"))) {
             total += 1;
         }
         setTotalScore(total);
@@ -646,8 +646,8 @@ export default function LabOne() {
                 <div className={styles['container-entrance']}>
                     <div className={styles['description-block']}>
                         <div className={styles['text']}>
-                            Перед началом выполнения работ, в ходе которых выполняется перемещение людей с применением подъемника, необходимо соблюсти ряд мер безопасности. Основные требования к выполнению таких работ отражены в «Правилах безопасности опасных производственных объектов, на которых используются подъемные сооружения», утвержденных <a className={styles['link']} href="https://docs.cntd.ru/document/573275657?section=text">Приказом Ростехнадзора от 26.11.2020 N 461</a>, а также прописываются в производственных инструкциях по безопасному ведению работ для рабочих, находящихся на подъемнике.
-                            Выполните задание, чтобы проверить свое знание требований безопасности для рабочих люльки.
+                        Для выполнения работ с использованием подъемников эксплуатирующая организация устанавливает порядок обмена сигналами между стропальщиками или работниками люльки и крановщиками. <b>Знаковая сигнализация</b> вносится в производственные инструкции и должна соответствовать «Правилам безопасности опасных производственных объектов, на которых используются подъемные сооружения», утвержденным <a className={styles['link']} href="https://docs.cntd.ru/document/573275657?section=text" target="_blank">Приказом Ростехнадзора от 26.11.2020 N 461</a>.
+<br /><br />Выполните задание, чтобы проверить свое знание знаковой сигнализации.
 
 
                         </div>
@@ -664,7 +664,7 @@ export default function LabOne() {
                     </div>
                     <div className={styles['title-block']}>
                         <div className={styles['title-one']}>Лабораторная работа</div>
-                        <div className={styles['title-two']}>Подготовка <br />к выполнению работ <br />в люльке</div>
+                        <div className={styles['title-two']}>Сигнализация</div>
                         <div className={styles['title-three']}>
                             <div className={styles['title-three-1']}>Рабочий люльки</div>
                             <div className={styles['title-three-2']}>Электронный практикум</div>

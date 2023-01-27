@@ -4,14 +4,14 @@ import styles from "../css/Menu.module.css";
 import React, { useState, useEffect } from "react";
 
 export default function Menu() {
- 
+
     const [scale, setScale] = useState(1)
-  useEffect(() => {
-    scalable(setScale)
-    window.onresize = () => {
-      scalable(setScale)
-    }
-  })
+    useEffect(() => {
+        scalable(setScale)
+        window.onresize = () => {
+            scalable(setScale)
+        }
+    })
 
     return (
         <>
@@ -29,8 +29,12 @@ export default function Menu() {
                                 <Link to={`/labOne/`}>
                                     <div className={`${styles['lab']} ${styles['lab-one']}`}>Сигнализация</div>
                                 </Link>
-                                <div className={`${styles['lab']} ${styles['lab-two']}`}>Подготовка к выполнению <br />работ в люльке</div>
-                                <div className={`${styles['lab']} ${styles['lab-three']}`}>Средства индивидуальной <br />защиты от падения с высоты</div>
+                                <Link to={`/labTwo/`}>
+                                    <div className={`${styles['lab']} ${styles['lab-two']}`}>Подготовка к выполнению <br />работ в люльке</div>
+                                </Link>
+                                <Link to={`/labThree/`}>
+                                    <div className={`${styles['lab']} ${styles['lab-three']}`}>Средства индивидуальной <br />защиты от падения с высоты</div>
+                                </Link>
                                 <div className={`${styles['lab']} ${styles['lab-four']}`}>Оказание первой помощи</div>
                             </div>
                         </div>
@@ -57,17 +61,17 @@ export default function Menu() {
 const scalable = (setScale: React.Dispatch<React.SetStateAction<number>>) => {
     const width = window.innerWidth;
     const height = window.innerHeight;
-  
+
     const scaleWidth = width / 1920
     const scaleHeight = height / 969
-  
+
     console.log(width, height)
-  
+
     if (scaleWidth > scaleHeight) {
-      setScale(scaleHeight)
+        setScale(scaleHeight)
     } else {
-      setScale(scaleWidth)
+        setScale(scaleWidth)
     }
-  
-  
-  }
+
+
+}
